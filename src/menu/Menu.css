@@ -4,17 +4,25 @@ input{box-sizing: border-box;}
     height: 100vh;
 }
 
+#menu-search-header-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 #search-container {
-    height: 10vh;
+    height: 5vh;
     width: 100%;
-    margin-top: 5vh;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 #search-input {
-    height: 30%;
+    height: 4vh;
     width: 80%;
     color: #000;
+    font-size: medium;
     background-color: #ddd7c8;
     border: none;
     border-radius: 6px;
@@ -22,6 +30,7 @@ input{box-sizing: border-box;}
 
 #projects-container {
     width: 100%;
+    margin-top: 5vh;
 }
 #projects-head-btn-container {
     
@@ -49,6 +58,7 @@ input{box-sizing: border-box;}
 #projects-archived-btn {
     margin-top: 10%;
     margin-left: 10%;
+    font-size: medium;
     color: #8f8b81;
     background-color: transparent;
     border: none;

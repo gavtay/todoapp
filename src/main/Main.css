@@ -1,0 +1,23 @@
+#main-container {
+    margin-top: 5vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+}
+
+#main-header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#main-more-btn {
+    font-size: xx-large;
+    font-weight: bold;
+    color: #ddd7c8;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#main-more-btn:hover {
+    color: #000;
+}
