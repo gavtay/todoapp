@@ -1,0 +1,18 @@
+#project-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: transparent;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#project-container:hover {
+    background-color: #ddd7c8;
+}
+#project-task-num {
+    color: #8f8b81;
+}
