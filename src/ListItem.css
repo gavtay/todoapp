@@ -26,6 +26,8 @@
     width: 6vh;
     margin-right: 1vw;
     font-weight: bold;
+    background-color: transparent;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
 }

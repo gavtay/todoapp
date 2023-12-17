@@ -14,7 +14,7 @@ function Menu() {
                     <p>{menuSearch}</p>
                 </div>
                 <div id='search-container'>
-                    <input type='text' id='search-input' placeholder='Search'></input>
+                    <input type='text' id='search-input' placeholder='Search' autoComplete='off'></input>
                 </div>
                 <div id='projects-container'>
                     <div id='projects-head-btn-container'>
