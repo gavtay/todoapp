@@ -1,4 +1,4 @@
-import ListItem from '../ListItem';
+import ListItem from './ListItem';
 import NewListItem from '../NewListItem';
 import './Main.css';
 
