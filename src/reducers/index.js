@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import { x } from '../actions';
+import showAddProject from './showAddProject';
 
 const allReducers = combineReducers({
-    x: x
+    showAddProject
 });
 export default allReducers;

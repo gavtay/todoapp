@@ -1,6 +1,5 @@
-export const x = () => {
+export const showaddproject = () => {
     return {
-        type: 'x'
+        type: 'SHOWADDPROJECT'
     }
 }
-

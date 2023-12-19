@@ -1,0 +1,41 @@
+#addproject-container {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-left: 2%;
+    padding-right: 2%;
+    background-color: transparent;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#addproject-input {
+    height: 4vh;
+    width: 12vw;
+    font-size: medium;
+    border: 1px solid #8f8b81;
+    border-radius: 6px;
+}
+
+#addproject-btn-container {
+    width: 5vw;
+    display: flex;
+    justify-content: space-between;
+}
+.addproject-btn {
+    height: 4vh;
+    width: 2vw;
+    font-size: medium;
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.addproject-btn:hover {
+    font-size: larger;
+    background-color: #ddd7c8;
+}
