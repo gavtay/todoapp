@@ -15,3 +15,10 @@ export const clearaddprojectinput = () => {
         type: 'CLEARADDPROJECTINPUT'
     }
 }
+
+export const addproject = (text) => {
+    return {
+        type: 'ADDPROJECT',
+        text: text
+    }
+}

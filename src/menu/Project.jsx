@@ -1,10 +1,16 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faListUl } from '@fortawesome/free-solid-svg-icons';
 import './Project.css';
 
-function Project() {
+const addProjectList = <FontAwesomeIcon id="plus-icon" icon={faListUl} style={{color: "#8f8b81"}} />
+
+function Project({ name }) {
+    console.log(name);
     return (
         <>
             <div id="project-container">
-                <p id='project-name'>^ Project Name</p>
+                <button id='project-btn'>{addProjectList} {name}</button>
+                {/* <p id='project-name'>{addProjectList} {name}</p> */}
                 <p id='project-task-num'>6</p>
             </div>
         </>

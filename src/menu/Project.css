@@ -13,6 +13,16 @@
 #project-container:hover {
     background-color: #ddd7c8;
 }
+
+#project-btn {
+    width: 100%;
+    text-align: left;
+    font-size: medium;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
 #project-task-num {
     color: #8f8b81;
 }

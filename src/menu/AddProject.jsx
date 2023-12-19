@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faX } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { showaddproject, updateaddprojectinput, clearaddprojectinput } from '../actions';
+import { showaddproject, updateaddprojectinput, clearaddprojectinput, addproject } from '../actions';
 import './AddProject.css';
 
 const addProjectCheck = <FontAwesomeIcon id="plus-icon" icon={faCheck} style={{color: "#10ce29"}} />
@@ -16,6 +16,12 @@ function AddProject() {
         dispatch(clearaddprojectinput());
     }
 
+    function addTheProject() {
+        dispatch(addproject(addProjectInput));
+        dispatch(showaddproject());
+        dispatch(clearaddprojectinput());
+    }
+
     function changeAddProjectInput(event) {
         dispatch(updateaddprojectinput(event.target.value));
     }
@@ -25,7 +31,7 @@ function AddProject() {
             <div id='addproject-container'>
                 <input id='addproject-input' placeholder='Project Name' value={addProjectInput} onChange={(event)=>changeAddProjectInput(event)}></input>
                 <div id='addproject-btn-container'>
-                    <button id='check-btn' className='addproject-btn'>{addProjectCheck}</button>
+                    <button id='check-btn' className='addproject-btn' onClick={addTheProject}>{addProjectCheck}</button>
                     <button id='cancel-btn' className='addproject-btn' onClick={closeAddProject}>{addProjectClose}</button>
                 </div>
             </div>

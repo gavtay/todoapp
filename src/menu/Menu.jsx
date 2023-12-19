@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { showaddproject, updateaddprojectinput, clearaddprojectinput } from '../actions';
+import { showaddproject, clearaddprojectinput } from '../actions';
 import AddProject from './AddProject.jsx';
 import Project from './Project.jsx';
 import './Menu.css';
@@ -9,18 +9,31 @@ import './Menu.css';
 const menuSearch = <FontAwesomeIcon id="plus-icon" icon={faMagnifyingGlass} style={{color: "#8f8b81"}} />
 
 function Menu() {
-    const showProject = useSelector(state => state.showAddProject)
+    const showProject = useSelector(state => state.showAddProject);
+    const projectArray = useSelector(state => state.projectArray);
     const dispatch = useDispatch();
-
+    
     function showAddProjectBox() {
         dispatch(showaddproject());
         if (showProject === true) { dispatch(clearaddprojectinput())}
     }
-
+    
     function ifAddProjectTrue() {
         if (showProject) {
             return (<AddProject />)
         }
+    }
+    
+    function populateProjects() {
+        return (
+            <>
+                {
+                    projectArray.map((project) => (
+                        <Project name={project} />
+                    ))
+                }
+            </>
+        )
     }
 
     return (
@@ -40,9 +53,7 @@ function Menu() {
                     </div>
                     <div>
                         {ifAddProjectTrue()}
-                        <Project />
-                        <Project />
-                        <Project />
+                        {populateProjects()}
                     </div>
                 </div>
                 <button id='projects-archived-btn'>Archived Projects</button>
