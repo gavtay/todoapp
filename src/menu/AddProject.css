@@ -16,7 +16,8 @@
     height: 4vh;
     width: 12vw;
     font-size: medium;
-    border: 1px solid #8f8b81;
+    background-color:#ddd7c8;
+    border: none;
     border-radius: 6px;
 }
 

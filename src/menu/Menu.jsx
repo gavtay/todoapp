@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { showaddproject } from '../actions';
+import { showaddproject, updateaddprojectinput, clearaddprojectinput } from '../actions';
 import AddProject from './AddProject.jsx';
 import Project from './Project.jsx';
 import './Menu.css';
@@ -14,6 +14,7 @@ function Menu() {
 
     function showAddProjectBox() {
         dispatch(showaddproject());
+        if (showProject === true) { dispatch(clearaddprojectinput())}
     }
 
     function ifAddProjectTrue() {
