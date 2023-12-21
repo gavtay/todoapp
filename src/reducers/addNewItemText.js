@@ -1,7 +1,7 @@
 const addNewItemText = (state = '', action) => {
     switch(action.type) {
         case 'ADDNEWITEMTEXT':
-            return action.text
+            return action.itemName
         default:
             return state
     }

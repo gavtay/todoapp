@@ -1,11 +1,18 @@
 const projectArray = (state = [], action) => {
     switch(action.type) {
         case 'ADDPROJECT':
-            return [...state, 
-                    { projectName: action.text }
+            return [
+                ...state, 
+                { 
+                    projectName: action.text,
+                    list: []
+                }
             ]
         // case 'ADDLISTITEM':
-        //     return 
+        //     return { 
+        //         ...state, 
+                
+        //      }
         default:
             return state
     }
