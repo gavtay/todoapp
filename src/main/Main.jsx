@@ -1,5 +1,5 @@
 import ListItem from './ListItem';
-import NewListItem from '../NewListItem';
+import NewListItem from './NewListItem';
 import './Main.css';
 
 function Main() {

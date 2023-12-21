@@ -22,3 +22,10 @@ export const addproject = (text) => {
         text: text
     }
 }
+
+export const addnewitemtext = (text) => {
+    return {
+        type: 'ADDNEWITEMTEXT',
+        text: text
+    }
+}
