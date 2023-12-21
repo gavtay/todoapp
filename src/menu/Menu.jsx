@@ -12,7 +12,7 @@ function Menu() {
     const showProject = useSelector(state => state.showAddProject);
     const projectArray = useSelector(state => state.projectArray);
     const dispatch = useDispatch();
-    
+
     function showAddProjectBox() {
         dispatch(showaddproject());
         if (showProject === true) { dispatch(clearaddprojectinput())}
@@ -29,7 +29,7 @@ function Menu() {
             <>
                 {
                     projectArray.map((project) => (
-                        <Project name={project} />
+                        <Project name={project.projectName} />
                     ))
                 }
             </>
@@ -44,7 +44,12 @@ function Menu() {
                     <p>{menuSearch}</p>
                 </div>
                 <div id='search-container'>
-                    <input type='text' id='search-input' placeholder='Search' autoComplete='off'></input>
+                    <input
+                        type='text'
+                        id='search-input'
+                        placeholder='Search'
+                        autoComplete='off'>
+                    </input>
                 </div>
                 <div id='projects-container'>
                     <div id='projects-head-btn-container'>

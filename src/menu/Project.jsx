@@ -5,12 +5,10 @@ import './Project.css';
 const addProjectList = <FontAwesomeIcon id="plus-icon" icon={faListUl} style={{color: "#8f8b81"}} />
 
 function Project({ name }) {
-    console.log(name);
     return (
         <>
             <div id="project-container">
                 <button id='project-btn'>{addProjectList} {name}</button>
-                {/* <p id='project-name'>{addProjectList} {name}</p> */}
                 <p id='project-task-num'>6</p>
             </div>
         </>

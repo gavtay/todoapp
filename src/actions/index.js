@@ -22,6 +22,13 @@ export const addproject = (text) => {
         text: text
     }
 }
+export const addlistitem = (text, index) => {
+    return {
+        type: 'ADDLISTITEM',
+        text: text,
+        ind: index
+    }
+}
 
 export const addnewitemtext = (text) => {
     return {

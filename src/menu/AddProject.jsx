@@ -29,7 +29,12 @@ function AddProject() {
     return (
         <>
             <div id='addproject-container'>
-                <input id='addproject-input' placeholder='Project Name' value={addProjectInput} onChange={(event)=>changeAddProjectInput(event)}></input>
+                <input id='addproject-input'
+                    placeholder='Project Name'
+                    value={addProjectInput}
+                    autoComplete='off'
+                    onChange={(event)=>changeAddProjectInput(event)}> 
+                </input>
                 <div id='addproject-btn-container'>
                     <button id='check-btn' className='addproject-btn' onClick={addTheProject}>{addProjectCheck}</button>
                     <button id='cancel-btn' className='addproject-btn' onClick={closeAddProject}>{addProjectClose}</button>
