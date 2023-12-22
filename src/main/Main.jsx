@@ -4,13 +4,41 @@ import { useSelector } from 'react-redux';
 import './Main.css';
 
 function Main() {
+    const currSelectedProject = useSelector(state => state.currSelectedProject);
+    const projectArray = useSelector(state => state.projectArray);
+    
+    function populateList() {
+        const selectedProjectList = projectArray.map((project) => {
+            if (project.projectName === currSelectedProject) {
+                return project.list;
+            }
+        });
 
-    const currSelectedProject = useSelector(state => state.currSelectedProject)
+    //    const newList = selectedProjectList[0];
 
-    function populateNewListItem() {
         if (currSelectedProject !== 'No Project Selected') {
-            return ( <NewListItem />)
-        }
+
+            if (selectedProjectList[0].length === 0) {
+                return (
+                    <>
+                        <p>There are no items in the list for this project.</p>
+                        <NewListItem />
+                    </>
+                )
+            }
+            // make the list items appear ???
+            else {
+                const newList = selectedProjectList[0].map(item => {
+                    return ( <ListItem name={item}/> )
+                });
+                return (
+                    <>
+                        {newList}
+                        <NewListItem />
+                    </>
+                )
+            }
+        }                   
     }
 
     return (
@@ -21,11 +49,8 @@ function Main() {
                     <button id='main-more-btn'>...</button>
                 </div>
                 <div id='main-list-container'>
-                    {/* <ListItem />
-                    <ListItem />
-                    <ListItem /> */}
+                    {populateList()}
                 </div>
-                {populateNewListItem()}
             </div>
         </>
     )

@@ -1,13 +1,25 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faListUl } from '@fortawesome/free-solid-svg-icons';
 import { newselectedproject } from '../actions';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import './Project.css';
 
 const addProjectList = <FontAwesomeIcon id="plus-icon" icon={faListUl} style={{color: "#8f8b81"}} />
 
 function Project({ name }) {
+    const projectArray = useSelector(state => state.projectArray)
     const dispatch = useDispatch();
+
+    function getListNum() {
+        const projectObj = projectArray.map((project) => {
+            if (project.projectName === name) {
+                return project.list;
+            }
+        })
+        return projectObj[0].length;
+        
+    }
+
 
     return (
         <>
@@ -17,7 +29,7 @@ function Project({ name }) {
                     onClick={()=>dispatch(newselectedproject(name))}>
                         {addProjectList} {name}
                 </button>
-                <p id='project-task-num'>6</p>
+                <p id='project-task-num'>{getListNum()}</p>
             </div>
         </>
     )

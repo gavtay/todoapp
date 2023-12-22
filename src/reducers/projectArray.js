@@ -8,11 +8,18 @@ const projectArray = (state = [], action) => {
                     list: []
                 }
             ]
-        // case 'ADDLISTITEM':
-        //     return { 
-        //         ...state, 
-                
-        //      }
+
+        case 'ADDLISTITEM':
+            return state.map(item => {
+                if (item.projectName === action.projectName) {
+                    return {...item, list: [
+                        ...item.list,
+                        action.itemName
+                        ]
+                    }
+                };
+                return item;
+            });
         default:
             return state
     }

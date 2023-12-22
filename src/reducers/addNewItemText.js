@@ -1,9 +1,11 @@
 const addNewItemText = (state = '', action) => {
     switch(action.type) {
         case 'ADDNEWITEMTEXT':
-            return action.itemName
+            return action.event;
+        case 'CLEARNEWITEMTEXT':
+            return ''
         default:
-            return state
+            return state;
     }
 }
 export default addNewItemText;

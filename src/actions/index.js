@@ -30,17 +30,22 @@ export const newselectedproject = (name) => {
     }
 }
 
-export const addlistitem = (text, index) => {
-    return {
-        type: 'ADDLISTITEM',
-        itemName: text,
-        ind: index
-    }
-}
 
 export const addnewitemtext = (text) => {
     return {
         type: 'ADDNEWITEMTEXT',
-        text: text
+        event: text
+    }
+}
+export const clearnewitemtext = () => {
+    return {
+        type: 'CLEARNEWITEMTEXT'
+    }
+}
+export const addlistitem = (text, name) => {
+    return {
+        type: 'ADDLISTITEM',
+        itemName: text,
+        projectName: name,
     }
 }
