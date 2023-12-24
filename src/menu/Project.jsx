@@ -16,8 +16,11 @@ function Project({ name }) {
                 return project.list;
             }
         })
-        return projectObj[0].length;
-        
+
+        console.log(projectObj);
+        for (let i = 0; i < projectObj.length; ++i) {
+            return projectObj[i].length;
+        }
     }
 
 
@@ -29,7 +32,7 @@ function Project({ name }) {
                     onClick={()=>dispatch(newselectedproject(name))}>
                         {addProjectList} {name}
                 </button>
-                <p id='project-task-num'>{getListNum()}</p>
+                {/* <p id='project-task-num'>{getListNum()}</p> */}
             </div>
         </>
     )

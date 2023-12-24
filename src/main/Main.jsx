@@ -6,19 +6,18 @@ import './Main.css';
 function Main() {
     const currSelectedProject = useSelector(state => state.currSelectedProject);
     const projectArray = useSelector(state => state.projectArray);
-    
+    let projectInd;
+
     function populateList() {
-        const selectedProjectList = projectArray.map((project) => {
+        const selectedProjectList = projectArray.map((project, index) => {
             if (project.projectName === currSelectedProject) {
+                projectInd = index;
                 return project.list;
             }
         });
 
-    //    const newList = selectedProjectList[0];
-
         if (currSelectedProject !== 'No Project Selected') {
-
-            if (selectedProjectList[0].length === 0) {
+            if (selectedProjectList[projectInd].length === 0) {
                 return (
                     <>
                         <p>There are no items in the list for this project.</p>
@@ -26,9 +25,8 @@ function Main() {
                     </>
                 )
             }
-            // make the list items appear ???
             else {
-                const newList = selectedProjectList[0].map(item => {
+                const newList = selectedProjectList[projectInd].map(item => {
                     return ( <ListItem name={item}/> )
                 });
                 return (
