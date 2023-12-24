@@ -4,13 +4,13 @@ import './ListItem.css';
 
 const itemTrash = <FontAwesomeIcon id="plus-icon" icon={faTrash} style={{color: "ff0000"}} />
 
-function ListItem({ item }) {
+function ListItem({ name }) {
     return (
         <>
             <div id='list-item-container'>
                 <div id='list-item-check-name-container'>
                     <input id='list-item-checkbox' type='checkbox'></input>
-                    <p id='list-item-name'>{item}</p>
+                    <p id='list-item-name'>{name}</p>
                 </div>
                 <button id='list-item-delete-btn'>{itemTrash}</button>
             </div>
