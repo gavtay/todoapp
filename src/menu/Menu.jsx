@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { showaddproject, clearaddprojectinput } from '../actions';
+import { showaddproject, clearaddprojectinput, filterproject } from '../actions';
 import AddProject from './AddProject.jsx';
 import Project from './Project.jsx';
 import './Menu.css';
@@ -11,6 +11,7 @@ const menuSearch = <FontAwesomeIcon id="plus-icon" icon={faMagnifyingGlass} styl
 function Menu() {
     const showProject = useSelector(state => state.showAddProject);
     const projectArray = useSelector(state => state.projectArray);
+    const filtProject = useSelector(state => state.filterProject);
     const dispatch = useDispatch();
 
     function showAddProjectBox() {
@@ -23,12 +24,24 @@ function Menu() {
             return (<AddProject />)
         }
     }
+
+    function changeProjectFilt(event) {
+        dispatch(filterproject(event.target.value));
+    }
     
     function populateProjects() {
+        let newProjectArray = projectArray.filter((project) => {
+            let projName = project.projectName.toLowerCase();
+            
+            if (projName.includes(filtProject.toLowerCase())) {
+                return project;
+            }
+        })
+
         return (
             <>
                 {
-                    projectArray.map((project) => (
+                    newProjectArray.map((project) => (
                         <Project name={project.projectName} />
                     ))
                 }
@@ -48,6 +61,8 @@ function Menu() {
                         type='text'
                         id='search-input'
                         placeholder='Search'
+                        value={filtProject}
+                        onChange={(event)=>changeProjectFilt(event)}
                         autoComplete='off'>
                     </input>
                 </div>

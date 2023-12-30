@@ -4,6 +4,13 @@ export const showaddproject = () => {
     }
 }
 
+export const filterproject = (text) => {
+    return {
+        type: 'CHANGEFILTER',
+        event: text
+    }
+}
+
 export const updateaddprojectinput = (text) => {
     return {
         type: 'UPDATEADDPROJECTINPUT',
