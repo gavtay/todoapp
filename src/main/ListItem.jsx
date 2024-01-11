@@ -5,6 +5,11 @@ import './ListItem.css';
 const itemTrash = <FontAwesomeIcon id="plus-icon" icon={faTrash} style={{color: "ff0000"}} />
 
 function ListItem({ name }) {
+    function deleteListItem(event) {
+        // get the task index in the list, delete it
+        console.log(event);
+    }
+    
     return (
         <>
             <div id='list-item-container'>
@@ -12,7 +17,7 @@ function ListItem({ name }) {
                     <input id='list-item-checkbox' type='checkbox'></input>
                     <p id='list-item-name'>{name}</p>
                 </div>
-                <button id='list-item-delete-btn'>{itemTrash}</button>
+                <button id='list-item-delete-btn' onClick={()=>deleteListItem(event)}>{itemTrash}</button>
             </div>
         </>
     )
