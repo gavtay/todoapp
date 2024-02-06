@@ -5,6 +5,7 @@ import projectArray from './projectArray';
 import addNewItemText from './addNewItemText';
 import currSelectedProject from './currSelectedProject';
 import filterProject from './filterProjects';
+import delListItem from './delListItem';
 
 const allReducers = combineReducers({
     showAddProject,
@@ -12,6 +13,7 @@ const allReducers = combineReducers({
     projectArray,
     newItemText: addNewItemText,
     currSelectedProject,
-    filterProject
+    filterProject,
+    delListItem
 });
 export default allReducers;
