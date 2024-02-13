@@ -1,0 +1,6 @@
+#project-info-container {
+    margin-left: 33%;
+    background-color: aqua;
+    position: absolute;
+    display: flex;
+}

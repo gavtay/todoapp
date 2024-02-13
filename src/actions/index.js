@@ -37,6 +37,11 @@ export const newselectedproject = (name) => {
     }
 }
 
+export const projectinfobox = () => {
+    return {
+        type: 'PROJECTINFOBOX'
+    }
+}
 
 export const addnewitemtext = (text) => {
     return {

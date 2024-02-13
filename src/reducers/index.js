@@ -6,6 +6,7 @@ import addNewItemText from './addNewItemText';
 import currSelectedProject from './currSelectedProject';
 import filterProject from './filterProjects';
 import delListItem from './delListItem';
+import projectInfoBox from './projectInfoBox';
 
 const allReducers = combineReducers({
     showAddProject,
@@ -14,6 +15,7 @@ const allReducers = combineReducers({
     newItemText: addNewItemText,
     currSelectedProject,
     filterProject,
-    delListItem
+    delListItem,
+    projectInfoBox
 });
 export default allReducers;

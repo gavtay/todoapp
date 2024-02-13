@@ -1,15 +1,30 @@
 import ListItem from './ListItem';
 import NewListItem from './NewListItem';
-import { useSelector } from 'react-redux';
+import ProjectInfo from './ProjectInfo';
+import { useSelector, useDispatch } from 'react-redux';
 import './Main.css';
+import { projectinfobox } from '../actions';
 
 function Main() {
     const currSelectedProject = useSelector(state => state.currSelectedProject);
     const projectArray = useSelector(state => state.projectArray);
+    const projectInfoBox = useSelector(state => state.projectInfoBox)
+    const dispatch = useDispatch();
     let projectInd;
 
     function openProjectInfo() {
-        console.log('Open info box');
+        dispatch(projectinfobox());
+    }
+
+    function populateProjectInfo() {
+        console.log(projectInfoBox);
+        if (projectInfoBox === true) {
+            return (
+                <>
+                    <ProjectInfo />
+                </>
+            )
+        }
     }
 
     function populateList() {
@@ -51,6 +66,7 @@ function Main() {
                     <button id='main-more-btn'
                     onClick={openProjectInfo}
                     >...</button>
+                    {populateProjectInfo()}
                 </div>
                 <div id='main-list-container'>
                     {populateList()}
