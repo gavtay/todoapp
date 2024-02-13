@@ -8,6 +8,10 @@ function Main() {
     const projectArray = useSelector(state => state.projectArray);
     let projectInd;
 
+    function openProjectInfo() {
+        console.log('Open info box');
+    }
+
     function populateList() {
         const selectedProjectList = projectArray.map((project, index) => {
             if (project.projectName === currSelectedProject) {
@@ -44,7 +48,9 @@ function Main() {
             <div id='main-container'>
                 <div id='main-header-container'>
                     <h1>{currSelectedProject}</h1>
-                    <button id='main-more-btn'>...</button>
+                    <button id='main-more-btn'
+                    onClick={openProjectInfo}
+                    >...</button>
                 </div>
                 <div id='main-list-container'>
                     {populateList()}

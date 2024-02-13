@@ -10,7 +10,9 @@ function ListItem({ name }) {
     const dispatch = useDispatch;
     // onclick dispatch delete 
     function deleteItem() {
-        dispatch(dellistitem(name));
+        console.log('Delete task: ' + name);
+
+        // dispatch(dellistitem(name));
     } 
 
     return (
