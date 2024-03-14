@@ -20,6 +20,20 @@ const projectArray = (state = [], action) => {
                 };
                 return item;
             });
+
+        case 'DELLISTITEM':
+            return state.map(item => {
+                if (item.projectName === action.projectName) {
+                    console.log(action.itemName)
+                    console.log(action.projectName)
+                    return {
+                        ...item,
+                        list: item.list.filter(itemName => itemName !== action.itemName)
+                    };
+                }
+                return item;
+            });
+
         default:
             return state
     }

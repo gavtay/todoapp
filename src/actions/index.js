@@ -61,9 +61,10 @@ export const addlistitem = (text, name) => {
         projectName: name,
     }
 }
-export const dellistitem = (text) => {
+export const dellistitem = (itemName, projectName) => {
     return {
         type: 'DELLISTITEM',
-        event: text
+        itemName: itemName,
+        projectName: projectName
     }
 }

@@ -1,7 +1,16 @@
-const delListItem = (state = false, action) => {
+const delListItem = (state = [], action) => {
     switch(action.type) {
         case 'DELLISTITEM':
-            return !state;
+            state = state.filter(item => {
+                if (item.text !== action.text) {
+                    return item.text
+                }
+            })
+            return state.map(item => {
+                if (item.projectName === action.projectName) {
+                    return {item}
+                }
+            });
         default:
             return state;
     }
