@@ -12,18 +12,25 @@ function Main() {
     const dispatch = useDispatch();
     let projectInd;
 
-    function openProjectInfo() {
-        dispatch(projectinfobox());
-    }
-
     function populateProjectInfo() {
-        console.log(projectInfoBox);
-        if (projectInfoBox === true) {
-            return (
-                <>
-                    <ProjectInfo />
-                </>
-            )
+
+        if (currSelectedProject !== 'No Project Selected') {
+            if (projectInfoBox === true) {
+                return (
+                    <>
+                        <ProjectInfo />
+                    </>
+                )
+            }
+            else {
+                return (
+                    <button 
+                    id='main-more-btn'
+                    onClick={()=>dispatch(projectinfobox())}
+                    >...
+                    </button>
+                )
+            } 
         }
     }
 
@@ -63,9 +70,6 @@ function Main() {
             <div id='main-container'>
                 <div id='main-header-container'>
                     <h1>{currSelectedProject}</h1>
-                    <button id='main-more-btn'
-                    onClick={openProjectInfo}
-                    >...</button>
                     {populateProjectInfo()}
                 </div>
                 <div id='main-list-container'>
