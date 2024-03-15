@@ -37,6 +37,19 @@ export const newselectedproject = (name) => {
     }
 }
 
+export const delselectedproject = (projectName) => {
+    return {
+        type: 'DELSELECTEDPROJECT',
+        projectName: projectName
+    }
+}
+
+export const noselectedproject = () => {
+    return {
+        type: 'NOSELECTEDPROJECT'
+    }
+}
+
 export const projectinfobox = () => {
     return {
         type: 'PROJECTINFOBOX'

@@ -9,6 +9,9 @@ const projectArray = (state = [], action) => {
                 }
             ]
 
+        case 'DELSELECTEDPROJECT':
+            return state.filter(project => project.projectName !== action.projectName)
+
         case 'ADDLISTITEM':
             return state.map(item => {
                 if (item.projectName === action.projectName) {
