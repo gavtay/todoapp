@@ -32,7 +32,7 @@ function Project({ name }) {
                 <button
                     id='project-btn'
                     onClick={()=>dispatch(newselectedproject(name))}>
-                        {addProjectList} {name}
+                        <span id='project-icon'>{addProjectList}</span> {name}
                 </button>
                 <p id='project-task-num'>{getListNum()}</p>
             </div>

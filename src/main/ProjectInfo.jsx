@@ -16,10 +16,12 @@ function ProjectInfo() {
             <div id='project-info-container'>
                 <button
                     id='project-del-btn'
+                    className='project-btn'
                     onClick={()=>delSelectedProject()}
                     >Delete Project</button>
                 <button
                     id='project-info-close-btn'
+                    className='project-btn'
                     onClick={()=>dispatch(projectinfobox())}
                     >X</button>
             </div>

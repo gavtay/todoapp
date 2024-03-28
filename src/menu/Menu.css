@@ -11,6 +11,14 @@ input{box-sizing: border-box;}
     justify-content: space-between;
     align-items: center;
 }
+#menu-search-header {
+    font-size: larger;
+}
+@media screen and (max-width: 750px) {
+    #menu-search-header {
+        font-size: medium;
+    }
+}
 #search-container {
     height: 5vh;
     width: 100%;
@@ -40,6 +48,11 @@ input{box-sizing: border-box;}
 #projects-header {
     margin-left: 10%;
 }
+@media screen and (max-width: 750px) {
+    #projects-header {
+        font-size: medium;
+    }
+}
 #projects-add-btn {
     height: 4vh;
     margin-right: 10%;
@@ -52,6 +65,11 @@ input{box-sizing: border-box;}
 }
 #projects-add-btn:hover {
     color: #000;
+}
+@media screen and (max-width: 750px) {
+    #projects-add-btn {
+        font-size: large;
+    }
 }
 
 #projects-archived-btn {
@@ -66,4 +84,9 @@ input{box-sizing: border-box;}
 }
 #projects-archived-btn:hover {
     color: #000;
+}
+@media screen and (max-width: 750px) {
+    #projects-archived-btn {
+        font-size: smaller;
+    }
 }

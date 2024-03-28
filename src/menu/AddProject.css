@@ -11,6 +11,11 @@
     cursor: pointer;
     transition: 0.5s;
 }
+@media screen and (max-width: 750px) {
+    #addproject-container {
+        display: grid;
+    }
+}
 
 #addproject-input {
     height: 5vh;
@@ -39,4 +44,18 @@
 .addproject-btn:hover {
     font-size: larger;
     background-color: #ddd7c8;
+}
+@media screen and (max-width: 750px) {
+    #addproject-input {
+        width: 100%;
+        font-size: x-small;
+    }
+    #addproject-btn-container {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .addproject-btn {
+        width: 100%;
+    }
 }

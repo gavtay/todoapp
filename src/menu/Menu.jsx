@@ -53,7 +53,7 @@ function Menu() {
         <>
             <div id='menu-container'>
                 <div id='menu-search-header-container'>
-                    <h2>Search</h2>
+                    <h2 id='menu-search-header'>Search</h2>
                     <p>{menuSearch}</p>
                 </div>
                 <div id='search-container'>

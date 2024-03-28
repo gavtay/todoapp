@@ -1,24 +1,16 @@
-#project-info-container {
-}
-
-#project-del-btn {
+.project-btn {
     font-size: x-large;
     color: #8f8b81;
     background-color: transparent;
     border: none;
     transition: 0.5s;
 }
-#project-del-btn:hover {
+.project-btn:hover {
     color: #000;
 }
 
-#project-info-close-btn {
-    font-size: x-large;
-    color: #8f8b81;
-    background-color: transparent;
-    border: none;
-    transition: 0.5s;
-}
-#project-info-close-btn:hover {
-    color: #000;
+@media screen and (max-width: 750px) {
+    .project-btn {
+        font-size: medium;
+    }
 }

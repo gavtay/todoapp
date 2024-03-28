@@ -22,6 +22,14 @@
     border: none;
     cursor: pointer;
 }
+@media screen and (max-width: 750px) {
+    #project-btn {
+        font-size: small;
+    }
+    #project-icon {
+        display: none;
+    }
+}
 
 #project-task-num {
     color: #8f8b81;
